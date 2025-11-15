@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube AutoPause",
+  "version": "1.2",
+  "description": "Auto-pause and resume YouTube videos automatically when switching tabs or apps.",
+  "permissions": ["tabs", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
